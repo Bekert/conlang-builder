@@ -1,1 +1,3 @@
-# Basic JS Template
+# Conlang Builder
+
+WIP. Very early stage

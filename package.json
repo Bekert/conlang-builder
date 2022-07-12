@@ -12,7 +12,8 @@
 		"lint:fix": "npm run eslint:check && npm run prettier:fix",
 		"prepare": "husky install",
 		"start": "node src/index.js",
-		"dev": "nodemon src/index.js"
+		"dev": "nodemon src/index.js",
+		"generate": "node src/dictionaryToJson"
 	},
 	"config": {
 		"commitizen": {
