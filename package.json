@@ -1,0 +1,61 @@
+{
+	"name": "base-js-template",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"commit": "git-cz",
+		"prettier:check": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"eslint:check": "eslint .",
+		"lint": "npm run eslint:check && npm run prettier:check",
+		"lint:fix": "npm run eslint:check && npm run prettier:fix",
+		"prepare": "husky install",
+		"start": "node src/index.js",
+		"dev": "nodemon src/index.js"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-customizable"
+		},
+		"cz-customizable": {
+			"config": "./configs/commiting/commitizen.cjs"
+		}
+	},
+	"lint-staged": {
+		"*.{html,md,json,yml,yaml,js,css,scss}": "npm run lint:fix"
+	},
+	"prettier": "./configs/formatting/.prettierrc.json",
+	"eslintConfig": {
+		"extends": [
+			"./configs/linting/.eslintrc.json"
+		]
+	},
+	"babel": {
+		"extends": "./configs/linting/.babelrc.json"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.2",
+		"@babel/eslint-parser": "^7.18.2",
+		"@babel/plugin-syntax-import-assertions": "^7.17.12",
+		"@commitlint/cli": "^11.0.0",
+		"commitizen": "^4.2.4",
+		"cz-customizable": "^6.3.0",
+		"eslint": "^8.17.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.0.0",
+		"nodemon": "^2.0.19",
+		"prettier": "^2.6.2"
+	},
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Bekert/project-base.git"
+	},
+	"author": "Bekert",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Bekert/project-base/issues"
+	},
+	"homepage": "https://github.com/Bekert/project-base"
+}
